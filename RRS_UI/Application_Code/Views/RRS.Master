@@ -1,0 +1,243 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RRS.master.cs" Inherits="RRS_UI.Appplication_Code.Views.RRS" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <!-- Bootstrap 3.3.7 -->
+    <link href="../../Content/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link href="../../Content/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Ionicons -->
+
+    <!-- Theme style -->
+    <link href="../../Content/dist/css/hotel-admin.css" rel="stylesheet" />
+    <link href="../../Content/dist/css/_all-skins.min.css" rel="stylesheet" />
+
+
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
+
+    <!-- jQuery 3 -->
+    <script src="../../Content/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="../../Content/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../Content/dist/js/adminlte.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="../../Content/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+    <link href="../../Content/dist/css/custom-style.css" rel="stylesheet" />
+
+    <script src="../ViewsScript/Common.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            GetTopReservations();
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="skin-red">
+    <form id="form1" runat="server">
+        <div class="wrapper">
+            <header class="main-header">
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top">
+                    <!-- Logo -->
+                    <div class="col-md-3 col-xs-4">
+                        <img src="../../Content/images/logo.jpg" alt="" />
+                    </div>
+                    <!-- Navbar Right Menu -->
+                    <div class="col-md-9 col-xs-8">
+                        <div class="navbar-right navbar-custom-menu">
+                            <ul class="nav navbar-nav">
+                                <!-- Messages: style can be found in dropdown.less-->
+
+                                <!-- Notifications -->
+                                <li class="dropdown notifications-menu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fa fa-bell"></i>
+                                        <span id="lblGetPendingReservations" class="label label-warning" runat="server">10</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="header">You have 10 notifications</li>
+                                        <li>
+                                            <!-- inner menu: contains the actual data -->
+                                            <ul class="menu">
+                                                <li>
+                                                    <a href="#">5 new members joined today
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Very long description here that may not fit into the page and may cause design problems
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">5 new members joined
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#">25 sales made
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">You changed your username
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="footer"><a href="#">View all</a></li>
+                                    </ul>
+                                </li>
+                                <!-- User Account -->
+                                <li class="dropdown user user-menu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                        <span id="lblLoginUser" runat="server">Jane Doe <i class="caret"></i></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <!-- User image -->
+                                        <li class="user-header bg-light-red">
+                                            <img src="../../Content/images/avatar.png" class="img-circle" alt="User Image" />
+                                            <p>
+                                                <p id="lblusername" runat="server"></p>
+                                                <small>Member since <span id="lblMembership" runat="server">Nov. 2012</span></small>
+                                            </p>
+                                        </li>
+                                        <!-- Menu Footer-->
+                                        <li class="user-footer">
+                                            <div class="pull-left">
+                                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                            </div>
+                                            <div class="pull-right">
+                                                <a href="frmLogin.aspx" class="btn btn-default btn-flat">Sign out</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- Language -->
+                                <li class="dropdown notifications-menu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <span>Language <i class="caret"></i></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <ul class="menu">
+                                                <li><a href="#">English</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- Main Navigation -->
+                <div class="row subNav">
+                    <nav class="navbar navbar-inverse">
+                        <div class="container-fluid clearfix">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="collapse navbar-collapse" id="myNavbar">
+                                <ul class="nav navbar-nav clearfix">
+                                    <li><a href="#">Analytic</a></li>
+                                    <li class="active"><a href="frmReservations.aspx">Reservations</a></li>
+                                    <li><a href="#">Deals</a></li>
+                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="#">Settings</a></li>
+                                    <li><a href="#">Account</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+
+            <!-- Body Content-->
+            <div class="container body-content">
+                <div class="row gutter-10">
+                    <div class="col-xs-3 marBottom15">
+                        <div class="shadow-div hotel-info">
+                            <div class="hotel-info-div">
+                                <div class="restaurant-pic">
+                                    <img src="../../Content/images/appLogo.jpg" alt="" />
+                                </div>
+                                <h2 id="lblRestaurantName" runat="server"></h2>
+                                <p>Member since <span id="lblMemberShipDate" runat="server"></span></p>
+                                <p>Last online on <span id="lblLastLogin" runat="server">23 Aug 2017</span></p>
+                            </div>
+                            <div class="hotel-list-div">
+                                <h2>Latest Reservations</h2>
+                                <ul id="ul_TopReservation">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-9 marBottom15">
+                        <div class="shadow-div contact-details">
+                            <asp:ContentPlaceHolder ID="LoggedInContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="main-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-12">
+                            <p>
+                                Want to receive the latest promostions from abc.com?
+				<strong>Subscribe to our e-newsletter.</strong>
+                            </p>
+                            <div class="subscribelink row gutter-0 marBottom15">
+                                <div class="col-md-9 col-sm-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                        <input id="subscribe-email" type="text" class="form-control" name="email" placeholder="Your Email ">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12">
+                                    <button type="submit" class="btn btn-white marTop10-sm btn-block">Subscribe</button>
+                                </div>
+                            </div>
+                            <p>© 2017-18 abc.com | All rights reserved.</p>
+                        </div>
+                        <div class="col-sm-4 col-xs-12">
+                            <p><strong>Want to put your restaurant on abc,com?</strong></p>
+                            <p>It’s super easy! Just write an email to us at</p>
+                            <p class="marTop-Bottom15"><a href="#" class="link-underline font-white">support@abc.com</a></p>
+
+
+                            <p><a href="#" class="link-underline font-white">Click here</a> for restaurant login.</p>
+                        </div>
+                        <div class="col-sm-4 col-xs-12 footer-col">
+                            <h6>Stay Updated</h6>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook-f"></i>Facebook</a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i>Google +</a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </form>
+</body>
+</html>
