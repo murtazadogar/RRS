@@ -69,6 +69,7 @@ namespace DAL
                             objUserInfo.UserTypeID = reader.IsDBNull(reader.GetOrdinal("UserTypeID")) ? 0 : reader.GetInt32(reader.GetOrdinal("UserTypeID"));                          
                             objUserInfo.UserType = reader.IsDBNull(reader.GetOrdinal("UserType")) ? "" : reader.GetString(reader.GetOrdinal("UserType"));
                             objUserInfo.Email = reader.IsDBNull(reader.GetOrdinal("Email")) ? "" : reader.GetString(reader.GetOrdinal("Email"));
+                            objUserInfo.RestaurantDetails.ID= reader.IsDBNull(reader.GetOrdinal("RestaurantID")) ? 0 : reader.GetInt32(reader.GetOrdinal("RestaurantID"));
                             objUserInfo.RestaurantDetails.Name = reader.IsDBNull(reader.GetOrdinal("Restaurant")) ? "" : reader.GetString(reader.GetOrdinal("Restaurant"));
                             objUserInfo.RestaurantDetails.MembershipDate = reader.IsDBNull(reader.GetOrdinal("MembershipDate")) ?"" : (reader.GetDateTime(reader.GetOrdinal("MembershipDate")).ToString("dd MMM yyyy"));
                             objUserInfo.LastLogin = reader.IsDBNull(reader.GetOrdinal("LastLogin")) ? "" : (reader.GetDateTime(reader.GetOrdinal("LastLogin")).ToString("dd MMM yyyy"));

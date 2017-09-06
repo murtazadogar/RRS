@@ -32,11 +32,30 @@
     <script src="../../Content/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 
     <link href="../../Content/dist/css/custom-style.css" rel="stylesheet" />
+    <link href="../../Content/css/RRS.css" rel="stylesheet" />
+
+    <!-- Select2 -->
+    <link href="../../Content/bower_components/select2/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="../../Content/bower_components/select2/dist/js/select2.full.min.js"></script>
+    <script src="../../Content/dist/js/select2-multi-checkboxes.js"></script>
+
+    <!-- DataTables -->
+    <link href="../../Content/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <script src="../../Content/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../../Content/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+   
 
     <script src="../ViewsScript/Common.js"></script>
 
     <script>
         $(document).ready(function () {
+
+            /*Select 2*/
+            $('.select2').select2({
+                placeholder: "Select an option",
+                allowClear: true
+            })
+
             GetTopReservations();
         });
     </script>
@@ -154,7 +173,7 @@
                                 <ul class="nav navbar-nav clearfix">
                                     <li><a href="#">Analytic</a></li>
                                     <li class="active"><a href="frmReservations.aspx">Reservations</a></li>
-                                    <li><a href="#">Deals</a></li>
+                                    <li><a href="frmDeals.aspx">Deals</a></li>
                                     <li><a href="#">Profile</a></li>
                                     <li><a href="#">Settings</a></li>
                                     <li><a href="#">Account</a></li>

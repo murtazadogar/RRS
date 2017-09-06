@@ -13,6 +13,8 @@ namespace Model
                featuredPhotoLink, facebookLink, googlePlusLink, logo, profileImage, specialConditions,membershipDate;
         Country objcountry;
         City objcity;
+        List<RestaurantDeal> objRestaurantDeal;
+
 
         public Restaurant()
         {
@@ -32,7 +34,23 @@ namespace Model
             membershipDate = string.Empty;
             objcountry = new Country();
             objcity = new City();
+            objRestaurantDeal = new List<RestaurantDeal>();
+
+
         }
+
+        public List<RestaurantDeal> RestaurantDeal_li
+        {
+            get
+            {
+                return objRestaurantDeal;
+            }
+            set
+            {
+                objRestaurantDeal = value;
+            }
+        }
+
         public string MembershipDate
         {
             get

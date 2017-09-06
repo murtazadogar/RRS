@@ -8,18 +8,25 @@ namespace Model
 {
     public class RestaurantDeal
     {
-        int id,restaurantId, cuisineID,discount;
-        string startDate, endDate,description,name; 
+        int id,restaurantId, cuisineID, qualityRating, priceRating,discount ;
+        string startDate, endDate,description,name;
+        List<DealDetails> objDealDetails;
+        List<string> img_path;
+        List<Dish> dish_li;
+
         public RestaurantDeal()
         {
             id = -1;
             restaurantId = -1;
             cuisineID = -1;
             discount = 0;
-            startDate = string.Empty;
+              startDate = string.Empty;
             endDate = string.Empty;
             description = string.Empty;
             name = string.Empty;
+            objDealDetails = new List<DealDetails>();
+            img_path = new List<string>();
+            dish_li = new List<Dish>();
         }
 
         public int Discount
@@ -32,7 +39,67 @@ namespace Model
             {
                 discount = value;
             }
+
         }
+        public List<Dish> Dish_li
+        {
+            get
+            {
+                return dish_li;
+            }
+            set
+            {
+                dish_li = value;
+            }
+        }
+
+        public int QualityRating
+        {
+            get
+            {
+                return qualityRating;
+            }
+            set
+            {
+                qualityRating = value;
+            }
+        }
+        public int PriceRating
+        {
+            get
+            {
+                return priceRating;
+            }
+            set
+            {
+                priceRating = value;
+            }
+        }
+       
+
+        public List<string> Img_path
+        {
+            get
+            {
+                return img_path;
+            }
+            set
+            {
+                img_path = value;
+            }
+        }
+        public List<DealDetails> SpecificDealDetails
+        {
+            get
+            {
+                return objDealDetails;
+            }
+            set
+            {
+                objDealDetails = value;
+            }
+        }
+
         public int CuisineID
         {
             get

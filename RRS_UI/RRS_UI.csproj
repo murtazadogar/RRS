@@ -68,6 +68,8 @@
   <ItemGroup>
     <Content Include="Application_Code\CommonServices\CommonWebService.aspx" />
     <Content Include="Application_Code\ViewsScript\Reservation.js" />
+    <Content Include="Application_Code\ViewsScript\Restaurant.js" />
+    <Content Include="Application_Code\Views\frmDeals.aspx" />
     <Content Include="Application_Code\Views\frmReservations.aspx" />
     <Content Include="Content\css\bootstrap-datepicker.css" />
     <Content Include="Content\dist\js\select2-multi-checkboxes.js" />
@@ -76,7 +78,22 @@
     <Content Include="Content\images\arrow-list-hover.png" />
     <Content Include="Content\images\arrow-list.png" />
     <Content Include="Content\images\avatar.png" />
+    <Content Include="Content\images\bubble.svg" />
+    <Content Include="Content\images\hotel-1.jpg" />
+    <Content Include="Content\images\hotel-2.jpg" />
+    <Content Include="Content\images\hotel-3.jpg" />
+    <Content Include="Content\images\hotel-4.jpg" />
+    <Content Include="Content\images\hotel-logo-sm.jpg" />
+    <Content Include="Content\images\s-active.svg" />
+    <Content Include="Content\images\s-inactive.svg" />
+    <Content Include="Content\images\star-active.svg" />
+    <Content Include="Content\images\star-inactive.svg" />
+    <Content Include="Content\images\user.jpg" />
     <Content Include="Content\js\bootstrap-datepicker.js" />
+    <Content Include="Content\plugins\slickSlider\fonts\slick.svg" />
+    <Content Include="Content\plugins\slickSlider\slick-theme.css" />
+    <Content Include="Content\plugins\slickSlider\slick.css" />
+    <Content Include="Content\plugins\slickSlider\slick.min.js" />
     <Content Include="packages.config" />
     <Content Include="Application_Code\Views\RRS.Master" />
     <Content Include="Content\bower_components\bootstrap\.bower.json" />
@@ -424,6 +441,9 @@
     <Content Include="Content\bower_components\select2\src\scss\_single.scss" />
     <Content Include="Content\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="Content\plugins\input-mask\phone-codes\phone-codes.json" />
+    <Content Include="Content\plugins\slickSlider\fonts\slick.eot" />
+    <Content Include="Content\plugins\slickSlider\fonts\slick.ttf" />
+    <Content Include="Content\plugins\slickSlider\fonts\slick.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1232,7 +1252,7 @@
     <Content Include="Content\dist\css\alt\AdminLTE-without-plugins.min.css" />
     <Content Include="Content\dist\css\custom-style.css" />
     <Content Include="Content\dist\css\hotel-admin.css" />
-    <Content Include="Content\dist\css\RRS.css" />
+    <Content Include="Content\css\RRS.css" />
     <Content Include="Content\dist\css\_all-skins.min.css" />
     <Content Include="Content\dist\js\adminlte.js" />
     <Content Include="Content\dist\js\adminlte.min.js" />
@@ -1399,6 +1419,13 @@
     </Compile>
     <Compile Include="Application_Code\Views\frmDashboard.aspx.designer.cs">
       <DependentUpon>frmDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application_Code\Views\frmDeals.aspx.cs">
+      <DependentUpon>frmDeals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application_Code\Views\frmDeals.aspx.designer.cs">
+      <DependentUpon>frmDeals.aspx</DependentUpon>
     </Compile>
     <Compile Include="Application_Code\Views\frmLogin.aspx.cs">
       <DependentUpon>frmLogin.aspx</DependentUpon>

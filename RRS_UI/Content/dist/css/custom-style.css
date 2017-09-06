@@ -294,3 +294,247 @@
 .select2-container--open .select2-dropdown {
     min-width: 150px;
 }
+.addBtns{
+	float:right;
+	text-align:right;
+}
+.addBtns .btn{
+	text-transform:uppercase;
+}
+.marLft5{
+	margin-left:5px;
+}
+.restaurant-pic{
+	border:#d8d8d8 solid 1px;
+	background:#eeeeee;
+	border-radius:6px;
+	margin-bottom:15px;
+}
+.restaurant-pic img{
+	width:100%;
+	height:auto;
+}
+.admin-deal-detail{
+	border:#d4d4d4 solid 1px;
+	padding:10px;
+}
+.borTop{
+	border-top:#d4d4d4 solid 1px;
+	padding-top:10px;
+	margin-top:10px;
+}
+.admin-deal-detail h3{
+	margin:0 0 10px 0;
+	color:#4d4d4d;
+	font-size:18px;
+	font-weight:400; 
+ }
+.admin-menu-list h4{
+	margin:0 0 10px 0;
+	color:#4d4d4d;
+	font-size:18px;
+	font-weight:400; 
+ }
+.admin-deal-detail .carousel-indicators {
+    bottom: -4px;
+    right: -14%;
+	left:auto;
+}
+.fixed-logo {
+    bottom: 10px;
+    left: 5%;
+    position: absolute;
+    width: 50px;
+	height:36px;
+	overflow:hidden;
+    z-index: 16;
+	background:#fff;
+}
+
+.divText{
+	clear:both;
+	margin-bottom:5px;
+	padding:0px 15px;
+}
+.divText .text-left{
+	float:left;
+	text-align:left;
+}
+.divText .text-right{
+	float:right;
+	text-align:right;
+}
+.marTop20{
+	margin-top:20px;
+}
+.marTop30{
+	margin-top:30px;
+}
+.box-price-gray {
+    background: rgba(0, 0, 0, 0) url("../../images/s-inactive.svg") repeat-x scroll 0 0 / 14px auto;
+    float: right;
+    height: 13px;
+    margin-right: 10px;
+    width: 70px;
+}
+.box-detail-price-yellow_b {
+    background: rgba(0, 0, 0, 0) url("../../images/s-active.svg") repeat-x scroll 0 0 / 14px auto;
+    float: left;
+    height: 17px;
+    margin-left: 0;
+    width: 70px;
+}
+.box-detail-rating-gray {
+    background: rgba(0, 0, 0, 0) url("../../images/star-inactive.svg") repeat-x scroll 0 0 / 14px auto;
+    float: right;
+    height: 17px;
+    margin-right: 10px;
+    width: 70px;
+}
+.box-detail-rating-yellow_b {
+    background: rgba(0, 0, 0, 0) url("../../images/star-active.svg") repeat-x scroll 0 0 / 14px auto;
+    float: left;
+    height: 17px;
+    margin-left: 0;
+    width: 70px;
+}
+.admin-menu-list{
+	background:#ececec;
+	padding:12px 10px;
+}
+.admin-menu-list ul{
+	padding:0 0 0 15px;
+	margin:0px;
+	height:92px;
+	overflow:hidden;
+	overflow-y:auto;
+}
+.admin-menu-list ul li{
+	list-style-type:disc;
+	margin-bottom:3px;
+}
+
+#carousel-deals .carousel-inner {
+  overflow-y: hidden;
+}
+.swiper-slide {
+    float: left;
+    margin-right:20px;
+}
+.red-slide {
+    background: rgba(0, 0, 0, 0) url("../../images/bubble.svg") no-repeat scroll 0 0;
+    color: #fff;
+    margin-right: 7px;
+    text-decoration: none;
+    width: 75px;
+}
+.red-slide:focus,
+.red-slide:hover{
+	color:#fff;
+}
+.swiper-slide .home-slot-time {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+.home-slot-discount {
+    clear: both;
+    float: left;
+    font-family:Arial,sans-serif;
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 20px;
+    margin-left: 13px;
+    text-align: left;
+    width: auto;
+}
+.font-weight-bold {
+    font-weight: bold;
+	margin:0;
+	padding:0;
+	font-size:30px;
+}
+.home-slot-discount-pc {
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    height: auto;
+    margin-top: 0;
+    width: auto;
+}
+.home-slot-off {
+    clear: both;
+    color: #fff;
+    display: none;
+    float: left;
+    font-family:Arial,sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 12px;
+    margin-top: 2px;
+    text-align: center;
+    width: 100%;
+}
+.dealsContainer{
+	padding:0px 0px;
+}
+.dealsContainer .slick-prev::before, .dealsContainer .slick-next::before{
+	color:#bb2328 !important;
+}
+.dealsContainer .slick-prev {
+    left: -25px;
+}
+.dealsContainer .slick-next {
+    right: -25px;
+}
+.dealsContainer .slick-slide a.red-slide{
+	margin:0 3px !important;
+	width:80px !important;
+}
+.save-deal a{
+	color:#a7a7a7;
+	font-size:20px;
+}
+.save-deal a:focus,
+.save-deal a:hover{
+	color:#bb2328;
+}
+.deal-head{
+	padding-top:25px;
+	font-size:18px;
+}
+.admin-deal-box{
+	margin-bottom:15px;
+}
+.modal-header{
+	background:#bb2328;
+	color:#fff;
+}
+.modal-header .close {
+    color: #fff;
+	opacity:.6;
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+.select2-container{
+	width:100% !important;
+}
