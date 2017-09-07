@@ -40,5 +40,13 @@ namespace RRS_UI.Application_Code.CommonServices
             CommonDAL objmodelDal = new CommonDAL();
             return objmodelDal.LoadCustomerDDL();
         }
+
+        [WebMethod(EnableSession = true)]
+        public static List<Dish> LoadDishesDDL()
+        {
+            ///Declare Object of EmailTemplate Model          
+            CommonDAL objmodelDal = new CommonDAL();
+            return objmodelDal.LoadDishes_List();
+        }
     }
 }

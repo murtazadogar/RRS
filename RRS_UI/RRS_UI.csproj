@@ -72,6 +72,8 @@
     <Content Include="Application_Code\Views\frmDeals.aspx" />
     <Content Include="Application_Code\Views\frmReservations.aspx" />
     <Content Include="Content\css\bootstrap-datepicker.css" />
+    <Content Include="Content\css\fileinput.min.css" />
+    <Content Include="Content\css\timepicker.css" />
     <Content Include="Content\dist\js\select2-multi-checkboxes.js" />
     <Content Include="Content\images\analytics-pic.jpg" />
     <Content Include="Content\images\appLogo.jpg" />
@@ -90,6 +92,8 @@
     <Content Include="Content\images\star-inactive.svg" />
     <Content Include="Content\images\user.jpg" />
     <Content Include="Content\js\bootstrap-datepicker.js" />
+    <Content Include="Content\js\bootstrap-timepicker.js" />
+    <Content Include="Content\js\fileinput.min.js" />
     <Content Include="Content\plugins\slickSlider\fonts\slick.svg" />
     <Content Include="Content\plugins\slickSlider\slick-theme.css" />
     <Content Include="Content\plugins\slickSlider\slick.css" />
@@ -444,6 +448,7 @@
     <Content Include="Content\plugins\slickSlider\fonts\slick.eot" />
     <Content Include="Content\plugins\slickSlider\fonts\slick.ttf" />
     <Content Include="Content\plugins\slickSlider\fonts\slick.woff" />
+    <Content Include="Application_Code\Handler\UploadFileHandler.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1413,6 +1418,9 @@
     <Compile Include="Application_Code\CommonServices\CommonWebService.aspx.designer.cs">
       <DependentUpon>CommonWebService.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Application_Code\Handler\UploadFileHandler.ashx.cs">
+      <DependentUpon>UploadFileHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Application_Code\Views\frmDashboard.aspx.cs">
       <DependentUpon>frmDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1457,7 +1465,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\DealImages\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{99f4d518-3a5c-4332-a5ee-c77f1ebf8920}</Project>

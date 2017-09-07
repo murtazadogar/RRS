@@ -191,3 +191,44 @@ function GetTopReservations() {
         }
     });
 }
+
+function LoadDishesDDL(ControlID) {
+
+    $.ajax({
+        type: "POST",
+        url: '/Application_Code/CommonServices/CommonWebService.aspx/LoadDishesDDL',
+        dataType: "json",
+        async: false,
+        data: '',
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            var DishObject = response.d;
+            var result = '<option value=""></option>';
+            //creating Options List and appending it
+            for (var i = 0; i < DishObject.length; i++) {
+                result += '<option name="0" value="' + DishObject[i].Id + '">' + DishObject[i].Name + '</option>';
+            }
+
+            //If a page has more than one Dropdowns than sending all ids with comma separeted i.e. #Employee1,#Employee2
+            if (ControlID.split(',').length > 1) {
+                for (var i = 0; i < ControlID.split(',').length; i++) {
+                    jQuery(ControlID.split(',')[i]).html('');
+                    jQuery(ControlID.split(',')[i]).append(result);
+                }
+            } else {
+                jQuery(ControlID).html('');
+                $(ControlID).html(result);
+            }
+
+            //$(ControlID).select2();
+
+            //var Status_json = new Array();
+            //Status_json[0] = 1;
+            //$(ControlID).select2('val', Status_json);
+
+        },
+        failure: function () {
+
+        }
+    });
+}

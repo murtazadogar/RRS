@@ -56,7 +56,7 @@ namespace DAL
                     {
                         Reservation objReservation = new Reservation();
                         objReservation.ID = dr.IsDBNull(dr.GetOrdinal("ReservationID")) ? -1 : dr.GetInt32(dr.GetOrdinal("ReservationID"));
-                        objReservation.RestaurantDealDetails.Name = dr.IsDBNull(dr.GetOrdinal("Category")) ? "" : dr.GetString(dr.GetOrdinal("Category"));
+                        objReservation.RestaurantDealDetails.Name = dr.IsDBNull(dr.GetOrdinal("Name")) ? "" : dr.GetString(dr.GetOrdinal("Name"));
                         objReservation.RestaurantDealDetails.StartDate = dr.IsDBNull(dr.GetOrdinal("StartDate")) ? null : dr.GetDateTime(dr.GetOrdinal("StartDate")).ToString(UtilityFunctions.Creation_Date_Format);
                         objReservation.RestaurantDealDetails.Discount = dr.IsDBNull(dr.GetOrdinal("Percentage")) ? -1 : dr.GetInt32(dr.GetOrdinal("Percentage"));
                         objReservation.NoOfPerson = dr.IsDBNull(dr.GetOrdinal("NumberOfPersons")) ? -1 : dr.GetInt32(dr.GetOrdinal("NumberOfPersons"));
@@ -187,7 +187,7 @@ namespace DAL
                     {
                         Reservation objmod = new Reservation();
                         objmod.ID = dr.IsDBNull(dr.GetOrdinal("ReservationID")) ? -1 : dr.GetInt32(dr.GetOrdinal("ReservationID"));
-                        objmod.RestaurantDealDetails.Name = dr.IsDBNull(dr.GetOrdinal("Category")) ? "" : dr.GetString(dr.GetOrdinal("Category"));
+                        objmod.RestaurantDealDetails.Name = dr.IsDBNull(dr.GetOrdinal("Name")) ? "" : dr.GetString(dr.GetOrdinal("Name"));
                         objmod.RestaurantDealDetails.StartDate = dr.IsDBNull(dr.GetOrdinal("StartDate")) ? null : dr.GetDateTime(dr.GetOrdinal("StartDate")).ToString(UtilityFunctions.Creation_Date_Format);
                         objmod.RestaurantDealDetails.Discount = dr.IsDBNull(dr.GetOrdinal("Percentage")) ? -1 : dr.GetInt32(dr.GetOrdinal("Percentage"));
                         objmod.NoOfPerson = dr.IsDBNull(dr.GetOrdinal("NumberOfPersons")) ? -1 : dr.GetInt32(dr.GetOrdinal("NumberOfPersons"));

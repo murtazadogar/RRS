@@ -16,7 +16,7 @@ namespace Common
         /// </summary>
         public static string Connection_String = @"Data Source=LAP0068-PC;Initial Catalog=RRS_DB;Persist Security Info=True;User ID=sa;Password=ebryx1234";   
         public static readonly String Creation_Date_Format = "MM/dd/yyyy HH':'mm";
-
+        public static readonly string ImportDocumentPath = "/Content/DealImages/";
         /// <summary>
         /// Return List using LINQ
         /// </summary>

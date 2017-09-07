@@ -8,8 +8,8 @@ namespace Model
 {
     public class RestaurantDeal
     {
-        int id,restaurantId, cuisineID, qualityRating, priceRating,discount ;
-        string startDate, endDate,description,name;
+        int id,restaurantId, cuisineID, qualityRating, priceRating,discount, noOfPersons;
+        string startDate, endDate, description, name, daysOfWeek;
         List<DealDetails> objDealDetails;
         List<string> img_path;
         List<Dish> dish_li;
@@ -27,6 +27,32 @@ namespace Model
             objDealDetails = new List<DealDetails>();
             img_path = new List<string>();
             dish_li = new List<Dish>();
+            noOfPersons = 0;
+            daysOfWeek = string.Empty;
+        }
+
+        public string DaysOfWeek
+        {
+            get
+            {
+                return daysOfWeek;
+            }
+            set
+            {
+                daysOfWeek = value;
+            }
+        }
+
+        public int NoOfPerson
+        {
+            get
+            {
+                return noOfPersons;
+            }
+            set
+            {
+                noOfPersons = value;
+            }
         }
 
         public int Discount

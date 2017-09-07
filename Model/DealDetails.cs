@@ -9,7 +9,7 @@ namespace Model
    public class DealDetails
     {
         string startTime, endTime;
-        int discount,noOfPersons;
+        int discount;
       
 
         public DealDetails()
@@ -17,23 +17,11 @@ namespace Model
             startTime = string.Empty;
             endTime = string.Empty;
             discount = 0;
-            noOfPersons = 0;
-
+          
 
         }
 
-        public int NoOfPerson
-        {
-            get
-            {
-                return noOfPersons;
-            }
-            set
-            {
-                noOfPersons = value;
-            }
-        }
-
+       
         public string StartTime
         {
             get

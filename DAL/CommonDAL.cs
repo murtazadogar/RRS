@@ -130,5 +130,40 @@ namespace DAL
             }
             return At_List;
         }
+
+        public List<Dish> LoadDishes_List()
+        {
+            List<Dish> At_List = new List<Dish>();
+
+            ///Declare and Set paramiterized query
+            String queryString = "LoadCommonDDL @Mode,@UserID";
+            ///Declare and Set paramiterized query
+            using (SqlConnection connection = new SqlConnection(Connection_String))
+            {
+                ///Set SQL Command
+                SqlCommand command = new SqlCommand(queryString, connection);
+                ///Set parameters for paramiterized query
+                command.Parameters.Add("@Mode", System.Data.SqlDbType.Int).Value = 3;
+                command.Parameters.Add("@UserID", System.Data.SqlDbType.Int).Value = (HttpContext.Current.Session["LoggedIn_User"] as UserInfo).Id;
+                try
+                {
+                    ///Open SQL Established connection
+                    connection.Open();
+                    ///Execute SQL Command and store return result in a SQL Reader
+                    SqlDataReader dr = command.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        Dish objDish = new Dish();
+                        objDish.Id = dr.IsDBNull(dr.GetOrdinal("ID")) ? -1 : dr.GetInt32(dr.GetOrdinal("ID"));
+                        objDish.Name = dr.IsDBNull(dr.GetOrdinal("Dish")) ? "" : dr.GetString(dr.GetOrdinal("Dish"));
+                        At_List.Add(objDish);
+                    }
+                }
+                catch (Exception e)
+                {
+                }
+            }
+            return At_List;
+        }
     }
 }
