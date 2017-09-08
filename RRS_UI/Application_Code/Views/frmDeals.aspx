@@ -14,11 +14,8 @@
     <%--<link href="../../Content/css/timepicker.css" rel="stylesheet" />
     <script src="../../Content/js/bootstrap-timepicker.js"></script>--%>
 
-<link href="https://cdn.jsdelivr.net/bootstrap.timepicker/0.2.6/css/bootstrap-timepicker.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/bootstrap.timepicker/0.2.6/js/bootstrap-timepicker.min.js"></script>
-
-
-
+    <link href="../../Content/css/bootstrap-timepicker.min.css" rel="stylesheet" />
+    <script src="../../Content/js/bootstrap-timepicker.min.js"></script>
 
 
       <!--bootstrap file uploader-->
@@ -29,6 +26,8 @@
 
     <script>
         $(function () {
+
+            SetActiveMenuItem('#li_deals', '')
 
             $('input').iCheck({
                 checkboxClass: 'icheckbox_square-blue',
@@ -47,7 +46,7 @@
             //    }
             //});
 
-            $('.timepickerControl').timepicker('showWidget').on('show.timepicker', function (e) {
+            $('.timepickerControl').timepicker().on('show.timepicker', function (e) {
                 $('table').find('tr td a').find('i.icon-chevron-up').each(function (i) {
                     $(this).addClass(' fa fa-chevron-circle-up');
                 });
@@ -308,7 +307,7 @@
                                     <button type="button" class="col-lg-11 btn btn-round btn-red" onclick="SaveDealData();">Save</button>
                                 </div>
                                 <div class="col-lg-6 padLeft0">
-                                    <button type="button" class="col-lg-11  btn btn-round btn-danger">Cancel</button>
+                                    <button type="button" class="col-lg-11  btn btn-round btn-danger" onclick="RefreshForm();">Cancel</button>
                                 </div>
                             </div>
                         </div>

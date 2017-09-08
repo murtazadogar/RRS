@@ -12,7 +12,8 @@
     <script>
         $(document).ready(function () {
           
-        
+          SetActiveMenuItem('#li_reservations', '');
+
             $('.date').datepicker({ format: 'mm/dd/yyyy', autoclose: true, clearBtn:true });
             $('.date').val("");
 

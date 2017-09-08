@@ -170,13 +170,13 @@
                                 </button>
                             </div>
                             <div class="collapse navbar-collapse" id="myNavbar">
-                                <ul class="nav navbar-nav clearfix">
-                                    <li><a href="#">Analytic</a></li>
-                                    <li class="active"><a href="frmReservations.aspx">Reservations</a></li>
-                                    <li><a href="frmDeals.aspx">Deals</a></li>
-                                    <li><a href="#">Profile</a></li>
-                                    <li><a href="#">Settings</a></li>
-                                    <li><a href="#">Account</a></li>
+                                <ul class="nav navbar-nav clearfix" id="mainMenu">
+                                    <li id="li_dashboard"><a href="#">Analytic</a></li>
+                                    <li id="li_reservations" class="active"><a href="frmReservations.aspx">Reservations</a></li>
+                                    <li id="li_deals"><a href="frmDeals.aspx">Deals</a></li>
+                                    <li id="li_profile"><a href="#">Profile</a></li>
+                                    <li id="li_settings"><a href="#">Settings</a></li>
+                                    <li id="li_account"><a href="#">Account</a></li>
                                 </ul>
                             </div>
                         </div>

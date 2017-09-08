@@ -232,3 +232,12 @@ function LoadDishesDDL(ControlID) {
         }
     });
 }
+
+///Used for highlight currect selected menu 
+function SetActiveMenuItem(id, parent) {
+    $('#mainMenu li.active').removeClass('active');
+    $(id).addClass(' active');
+
+    if (parent != '')
+        $(parent).addClass(' active');
+}

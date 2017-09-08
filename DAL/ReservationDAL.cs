@@ -57,7 +57,7 @@ namespace DAL
                         Reservation objReservation = new Reservation();
                         objReservation.ID = dr.IsDBNull(dr.GetOrdinal("ReservationID")) ? -1 : dr.GetInt32(dr.GetOrdinal("ReservationID"));
                         objReservation.RestaurantDealDetails.Name = dr.IsDBNull(dr.GetOrdinal("Name")) ? "" : dr.GetString(dr.GetOrdinal("Name"));
-                        objReservation.RestaurantDealDetails.StartDate = dr.IsDBNull(dr.GetOrdinal("StartDate")) ? null : dr.GetDateTime(dr.GetOrdinal("StartDate")).ToString(UtilityFunctions.Creation_Date_Format);
+                        objReservation.RestaurantDealDetails.StartDate = dr.IsDBNull(dr.GetOrdinal("StartDate")) ? null : dr.GetTimeSpan(dr.GetOrdinal("StartDate")).ToString(UtilityFunctions.Time_Format);
                         objReservation.RestaurantDealDetails.Discount = dr.IsDBNull(dr.GetOrdinal("Percentage")) ? -1 : dr.GetInt32(dr.GetOrdinal("Percentage"));
                         objReservation.NoOfPerson = dr.IsDBNull(dr.GetOrdinal("NumberOfPersons")) ? -1 : dr.GetInt32(dr.GetOrdinal("NumberOfPersons"));
                         objReservation.Customer.Email = dr.IsDBNull(dr.GetOrdinal("Email")) ? "" : dr.GetString(dr.GetOrdinal("Email"));
@@ -132,6 +132,15 @@ namespace DAL
                         command.Parameters.Add("@StatusID", System.Data.SqlDbType.Int).Value = objReservation.StatusDetais.Id;
 
                     }
+                    else
+                    {
+                        ///Filter by only status
+                        command.Parameters.Add("@Mode", System.Data.SqlDbType.Int).Value = 11;
+                        command.Parameters.Add("@UserID", System.Data.SqlDbType.Int).Value = (HttpContext.Current.Session["LoggedIn_User"] as UserInfo).Id;
+                        command.Parameters.Add("@DealID", System.Data.SqlDbType.Int).Value = -1;
+                        command.Parameters.Add("@CountryID", System.Data.SqlDbType.Int).Value = -1;
+                        command.Parameters.Add("@StatusID", System.Data.SqlDbType.Int).Value = objReservation.StatusDetais.Id;
+                    }
                 }
                else if (objReservation.RestaurantDealDetails.Id > 0)
                 {
@@ -163,7 +172,7 @@ namespace DAL
                     command.Parameters.Add("@Mode", System.Data.SqlDbType.Int).Value = 8;
                     command.Parameters.Add("@UserID", System.Data.SqlDbType.Int).Value = (HttpContext.Current.Session["LoggedIn_User"] as UserInfo).Id;
                     command.Parameters.Add("@DealID", System.Data.SqlDbType.Int).Value = -1;
-                    command.Parameters.Add("@CountryID", System.Data.SqlDbType.Int).Value = -1;
+                    command.Parameters.Add("@CountryID", System.Data.SqlDbType.Int).Value = objReservation.CountryDetais.Id;
                     command.Parameters.Add("@StatusID", System.Data.SqlDbType.Int).Value = -1;
 
                 }
@@ -188,7 +197,7 @@ namespace DAL
                         Reservation objmod = new Reservation();
                         objmod.ID = dr.IsDBNull(dr.GetOrdinal("ReservationID")) ? -1 : dr.GetInt32(dr.GetOrdinal("ReservationID"));
                         objmod.RestaurantDealDetails.Name = dr.IsDBNull(dr.GetOrdinal("Name")) ? "" : dr.GetString(dr.GetOrdinal("Name"));
-                        objmod.RestaurantDealDetails.StartDate = dr.IsDBNull(dr.GetOrdinal("StartDate")) ? null : dr.GetDateTime(dr.GetOrdinal("StartDate")).ToString(UtilityFunctions.Creation_Date_Format);
+                        objmod.RestaurantDealDetails.StartDate = dr.IsDBNull(dr.GetOrdinal("StartDate")) ? null : dr.GetDateTime(dr.GetOrdinal("StartDate")).ToString(UtilityFunctions.Time_Format);
                         objmod.RestaurantDealDetails.Discount = dr.IsDBNull(dr.GetOrdinal("Percentage")) ? -1 : dr.GetInt32(dr.GetOrdinal("Percentage"));
                         objmod.NoOfPerson = dr.IsDBNull(dr.GetOrdinal("NumberOfPersons")) ? -1 : dr.GetInt32(dr.GetOrdinal("NumberOfPersons"));
                         objmod.Customer.Email = dr.IsDBNull(dr.GetOrdinal("Email")) ? "" : dr.GetString(dr.GetOrdinal("Email"));

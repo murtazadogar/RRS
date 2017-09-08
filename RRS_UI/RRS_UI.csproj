@@ -72,6 +72,7 @@
     <Content Include="Application_Code\Views\frmDeals.aspx" />
     <Content Include="Application_Code\Views\frmReservations.aspx" />
     <Content Include="Content\css\bootstrap-datepicker.css" />
+    <Content Include="Content\css\bootstrap-timepicker.min.css" />
     <Content Include="Content\css\fileinput.min.css" />
     <Content Include="Content\css\timepicker.css" />
     <Content Include="Content\dist\js\select2-multi-checkboxes.js" />
@@ -93,6 +94,7 @@
     <Content Include="Content\images\user.jpg" />
     <Content Include="Content\js\bootstrap-datepicker.js" />
     <Content Include="Content\js\bootstrap-timepicker.js" />
+    <Content Include="Content\js\bootstrap-timepicker.min.js" />
     <Content Include="Content\js\fileinput.min.js" />
     <Content Include="Content\plugins\slickSlider\fonts\slick.svg" />
     <Content Include="Content\plugins\slickSlider\slick-theme.css" />

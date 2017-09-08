@@ -70,12 +70,10 @@ function SaveDealData() {
 function RefreshForm() {
 
     ///Reset Input Form
-    document.getElementById("form1").reset();
-
-    
-    $(".js-example-placeholder-single").select2("val", "");
-
-
+    document.getElementById("form1").reset();  
+    $(".js-example-basic-multiple").val('').trigger("change");
+    $(".timepickerControl").val('').trigger("change");
+   
 }
 
 function UploadDocument(uploader) {
