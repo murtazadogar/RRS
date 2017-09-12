@@ -46,7 +46,7 @@
                         <div class="navbar-nav pull-right">
                             <a class="nav-item nav-link" href="#">Blog</a>
                             <a class="nav-item nav-link" href="#">How it Works</a>
-                            <a class="nav-item nav-link btnLink" href="#">Sign Up</a>
+                            <a class="nav-item nav-link btnLink" href="frmSignUp.aspx">Sign Up</a>
                         </div>
                     </div>
                 </div>

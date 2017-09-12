@@ -28,7 +28,7 @@ namespace RRS_UI.Appplication_Code.Views
             model.Id = string.IsNullOrEmpty(hdnID) ? 0 : int.Parse(hdnID);
             model.Username = user_name;
             model.Email = email;
-            model.Password = password;
+            model.Password = UtilityFunctions.EncryptPassword(password);
             model.UserTypeID = 2;
 
             UserInfoDAL objmodelDal = new UserInfoDAL();

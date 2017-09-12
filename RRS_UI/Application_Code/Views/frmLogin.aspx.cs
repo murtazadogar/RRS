@@ -39,7 +39,7 @@ namespace RRS_UI.Appplication_Code.Views
             {
                 UserInfoDAL UMobject = new UserInfoDAL();
                 
-                dynamic result = UMobject.CheckIfUserExistsInDB(email.Value, password.Value);
+                dynamic result = UMobject.CheckIfUserExistsInDB(email.Value, UtilityFunctions.DecryptPassword(password.Value));
                 HttpContext.Current.Session["LoggedIn_User"] = (UserInfo)result.GetType().GetProperty("UserInfo").GetValue(result, null);
 
                 if ((string)result.GetType().GetProperty("FailureMessage").GetValue(result, null) == string.Empty)
